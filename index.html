@@ -576,9 +576,9 @@
           name: "clipboard-write"
         }).then(result => {
           if (result.state == "granted" || result.state == "prompt") {
-            const number = codeContainer.querySelector('.code-number').innerHTML.replace('#', '');
-            const content = codeContainer.querySelector('.code-content').innerHTML;
-            const copyContent = `Article #${number}: ${content}`;
+            const number = codeContainer.querySelector('.code-number').innerText;
+            const content = codeContainer.querySelector('.code-content').innerText;
+            const copyContent = `Article ${number}: ${content}`;
             navigator.clipboard.writeText(copyContent)
               .then(() => {
                 toast(copyContent);
