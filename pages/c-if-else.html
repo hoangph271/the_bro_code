@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>If, else statements</title>
+  <style>
+  .inline {
+    display: inline-block;
+  }
+  </style>
+</head>
+
+<body>
+  <div>
+    Đầu tiên là cái này, toán tử <pre class="inline">"%"</pre> có nghĩa là lấy số dư của phép chia, nhá...?
+  </div>
+  <hr />
+  <div>
+    Ví dụ, cái đoạn này:
+    <pre>int a = 15 % 4;</pre>
+    Thằng a sẽ có giá trị là 3 nhá...?
+  </div>
+  <hr />
+  <div>
+    Còn nếu là cái đoạn này:
+    <pre>int b = 8 % 4;</pre>
+    Thằng b sẽ có giá trị là 0, OK...?
+  </div>
+  <hr />
+
+  <div>Tiếp nha, đọc thử code dưới này...?</div>
+  <pre>
+#include<stdio.h>
+
+int main() {
+  int num = 0;
+  printf("Enter the number");
+  scanf("%d", &num);
+
+  if (num % 2 == 0) {
+    printf("%d is even number", num);
+  }
+
+  return;
+}
+  </pre>
+  <div>
+    Thì chỉ có đoạn này là mới thôi đúng không...?
+    <pre>
+if (num % 2 == 0) {
+  printf("%d is even number", num);
+}
+    </pre>
+  </div>
+  <hr/>
+  <div>
+    Đoạn mới này gọi là cấu trúc điều kiện, cấu trúc điều kiện có dạng như ri:
+    <pre>
+if (dieu_kien) {
+  // Lam chi do
+}
+    </pre>
+    Ý nghĩa là, nếu đoạn code trong <pre class="inline">dieu_kien</pre> mà "đúng", thì đoạn code <pre class="inline">// Lam chi do</pre> sẽ được thực thi, còn không thì sẽ bỏ qua đoạn code <pre class="inline">// Lam chi do</pre>...!
+  </div>
+  <hr/>
+  <div>
+    Thấy chữ "đúng" anh để trong ngoặc ha, "đúng" và "sai" là kết quả của những phép toán như này:
+    <pre>So sánh bằng: ==</pre>
+    <pre>So sánh khác: !=</pre>
+    <pre>So sánh nhỏ hơn: &lt;</pre>
+    <pre>So sánh lớn hơn: &gt;</pre>
+    <pre>So sánh nhỏ hơn hoặc bằng: &lt;=</pre>
+    <pre>So sánh lớn hơn hoặc bằng: &gt;=</pre>
+  </div>
+  <div>
+    Ví dụ:
+  </div>
+  <div>
+    <pre>5 == 3 cho kết quả sai</pre>
+    <pre>2 != 0 cho kết quả đúng</pre>
+    <pre>2 >= 0 cho kết quả đúng</pre>
+    <pre>2 > 2 cho kết quả sai</pre>
+    <pre>2 < 0 cho kết quả sai</pre>
+    <pre>2 <= 2 cho kết quả đúng</pre>
+  </div>
+  <hr/>
+  <div>
+    Rứa thì, quay lại đoạn code cũ...!
+    <pre>
+if (num % 2 == 0) {
+  printf("%d is even number", num);
+}
+    </pre>
+    Đoạn này sẽ in ra thông báo num là số chẵn (even) nếu "kết quả phép chia num cho 2" bằng với 0...!
+  </div>
+  <div>Hiểu chưa...?</div>
+</body>
+
+</html>
