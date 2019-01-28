@@ -17,7 +17,7 @@
   <!-- Vue instance -->
   <div id="app">
     <div class="search-box">
-      <input type="text" placeholder="keyword" name="keyword" v-model="keyword" id="keyword">
+      <input type="text" autocomplete="off" placeholder="keyword" name="keyword" v-model="keyword" id="keyword">
       <span>Found {{ this.codes.length }} code{{ this.codes.length > 1 ? 's': ''}}...!</span>
     </div>
     <div v-for="code in codes" class="code-container">
