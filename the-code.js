@@ -118,7 +118,6 @@ const codes = [
 ];
 
 (() => {
-
   for (let i = 0; i < codes.length; i++) {
     codes[i] = {
       number: i + 1,
