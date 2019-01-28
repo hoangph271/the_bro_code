@@ -1,8 +1,13 @@
 new Vue({
   el: '#app',
   data: {
-    codes: codes,
+    keyword: '',
   },
+  computed: {
+    codes: function() {
+      return codes.filter(code => code.content.includes(this.keyword));
+    }
+  }
 });
 document.querySelectorAll('.code-container').forEach((codeContainer) => {
   codeContainer.addEventListener('click', codeClickedHandler);

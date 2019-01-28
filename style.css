@@ -3,6 +3,24 @@ body {
   margin: 10px;
 }
 
+.search-box {
+  text-align: center;
+  margin: 5px 0;
+}
+
+.search-box>#keyword {
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+@media only screen and (max-width: 400px) {
+  .search-box>span {
+    display: block;
+    margin: 5px 0;
+  }
+}
+
 .code-container {
   user-select: none;
   cursor: pointer;
@@ -14,6 +32,8 @@ body {
 }
 
 .code-container:hover {
+  padding: 3px;
+  border: 2px solid rgba(120, 120, 120, 0.8);
   background-color: rgba(120, 120, 120, 0.3);
   border-radius: 5px;
 }
