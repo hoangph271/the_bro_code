@@ -117,14 +117,12 @@ const codes = [
   "A bro shall never engage in any sexual activity with a Girl-Bro.",
 ];
 
-let data = '';
+(() => {
 
-for (let i = 0; i < codes.length; i++) {
-  data += `
-    <div class="code-container">
-      <div class="code-number">#${i+1}</div>
-      <div class="code-content">${codes[i]}</div>
-    </div>`;
-}
-
-require('fs').writeFileSync('html.html', data, 'utf8');
+  for (let i = 0; i < codes.length; i++) {
+    codes[i] = {
+      number: i + 1,
+      content: codes[i],
+    };
+  }
+})();
