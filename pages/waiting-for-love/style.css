@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  font-family: 'Lobster Two', cursive;
+}
+
+div.background {
+  width: 100vw;
+  min-height: 100vh;
+  background-image: url(background.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+div.content {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+div.count-down {
+  border: 2px solid lightgray;
+  background-color: white;
+  display: inline-block;
+  flex-grow: 0;
+}
+
+.clock {
+  font-size: xx-large;
+  display: inline-block;
+}
+
+.clock>div {
+  color: white;
+  display: inline-block;
+  padding: 10px;
+  min-width: 100px;
+  background: rgba(40,50,61,0.65);
+}
