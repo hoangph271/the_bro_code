@@ -37,6 +37,17 @@ const updateClockContent = (() => {
   };
 })();
 
+const audio = new Audio('./A Thousand Years - Christina Perri (NhacPro.net).mp3');
+document.querySelector('.song-button').addEventListener('click', function(e) {
+  if (this.classList.contains('paused')) {
+    audio.play();
+    this.classList.remove('paused');
+  } else {
+    audio.pause();
+    this.classList.add('paused');
+  }
+});
+
 function refreshTimer() {
   const now = new Date();
   if (now.getTime() < D_DAY.getTime()) {
