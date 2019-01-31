@@ -21,6 +21,11 @@ div.content {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
+div.content>.content-wrapper {
+  max-width: 96%;
+  margin: auto;
+}
+
 div.count-down {
   border: 2px solid lightgray;
   background-color: white;
@@ -39,4 +44,11 @@ div.count-down {
   padding: 10px;
   min-width: 100px;
   background: rgba(40,50,61,0.65);
+}
+
+@media (max-width: 1024px) {
+  .clock>div {
+    width: 40%;
+    margin-top: 5px;
+  }
 }
