@@ -7,33 +7,44 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Can't wait...! :"}</title>
   <link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <link rel="shortcut icon" href="icon.png" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="background">
-    <div class="content">
+    <div id="app"class="content">
       <div class="content-wrapper">
-        <div class="message">Back To You Countdown</div>
+        <div class="message">{{ title }}</div>
         <div class="clock">
           <div class="days">
-            <div class="value"></div>
-            <div class="label">days</div>
+            <div class="value">{{ days >= 1 ? 'days' : 'day'}}</div>
+            <div class="label">{{ days }}</div>
           </div>
           <div class="hours">
-            <div class="value"></div>
-            <div class="label">hours</div>
+            <div class="value">{{ hours >= 1 ? 'hours' : 'hour'}}</div>
+            <div class="label">{{ hours }}</div>
           </div>
           <div class="minutes">
-            <div class="value"></div>
-            <div class="label">minutes</div>
+            <div class="value">{{ minutes >= 1 ? 'minutes' : 'minute'}}</div>
+            <div class="label">{{ minutes }}</div>
           </div>
           <div class="seconds">
-            <div class="value"></div>
-            <div class="label">seconds</div>
+            <div class="value">{{ seconds >= 1 ? 'seconds' : 'second'}}</div>
+            <div class="label">{{ seconds }}</div>
           </div>
         </div>
-        <div class="song-button paused"></div>
+        <div class="misses-container">
+          <div v-for="miss in misses" :key="miss.id" class="miss-wrapper">
+            <div
+              :title="(miss.src || '').replace('./', '')"
+              :class="{'play-song': true, 'none': miss.src === undefined, 'paused': paused || srcId != miss.id }"
+              @click="toggleMusic(miss)"
+            ></div>
+            <div v-if="miss.her" class="her">"{{ miss.her }}"</div>
+            <div v-if="miss.me" class="me">"{{ miss.me }}"</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
