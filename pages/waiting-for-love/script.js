@@ -10,6 +10,8 @@ const MISSES = [
   {
     id: 2,
     me: `I miss the way you turn away and cover your head when you're shy...!`,
+    src: './peter & lara jean i like me better.mp3',
+    title: 'Peter & Lara Jean - I like me better',
   },
 ];
 /* global Vue */
