@@ -37,7 +37,7 @@
         <div class="misses-container">
           <div v-for="miss in misses" :key="miss.id" class="miss-wrapper">
             <div
-              :title="(miss.src || '').replace('./', '')"
+              :title="miss.title"
               :class="{'play-song': true, 'none': miss.src === undefined, 'paused': paused || srcId != miss.id }"
               @click="toggleMusic(miss)"
             ></div>
