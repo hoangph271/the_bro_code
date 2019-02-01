@@ -15,7 +15,7 @@ const MISSES = [
   },
 ];
 /* global Vue */
-new Vue({
+const app = new Vue({
   el: '#app',
   data: {
     days: 0,
@@ -30,6 +30,7 @@ new Vue({
   },
   mounted: function() {
     this.updateTimer();
+    this.audio.onended = this.nextSong;
   },
   methods: {
     updateTimer: function() {
@@ -42,7 +43,7 @@ new Vue({
       if (now.getTime() < D_DAY.getTime()) {
         setTimeout(this.updateTimer, 1000);
       } else {
-        // TODO: Set final text
+        // TODO: Set final content
       }
     },
     getTimeLeft: function (from, to) {
@@ -80,6 +81,21 @@ new Vue({
         this.title = title;
       } else {
         this.audio.pause();
+        this.paused = true;
+        this.title = 'Back To You Countdown';
+      }
+    },
+    nextSong: function () {
+      if (!this.srcId) return;
+      const currentIndex = this.misses.findIndex(miss => this.srcId === miss.id);
+      if (currentIndex  + 1 < this.misses.length) {
+        const nextMiss = this.misses[currentIndex + 1];
+        this.srcId = nextMiss.id;
+        this.audio.src = nextMiss.src;
+        this.audio.play();
+        this.paused = false;
+        this.title = nextMiss.title;
+      } else {
         this.paused = true;
         this.title = 'Back To You Countdown';
       }
