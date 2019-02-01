@@ -18,19 +18,19 @@
         <div class="message">{{ title }}</div>
         <div class="clock">
           <div class="days">
-            <div class="value">{{ days >= 1 ? 'days' : 'day'}}</div>
+            <div class="value">{{ days > 1 ? 'days' : 'day'}}</div>
             <div class="label">{{ days }}</div>
           </div>
           <div class="hours">
-            <div class="value">{{ hours >= 1 ? 'hours' : 'hour'}}</div>
+            <div class="value">{{ hours > 1 ? 'hours' : 'hour'}}</div>
             <div class="label">{{ hours }}</div>
           </div>
           <div class="minutes">
-            <div class="value">{{ minutes >= 1 ? 'minutes' : 'minute'}}</div>
+            <div class="value">{{ minutes > 1 ? 'minutes' : 'minute'}}</div>
             <div class="label">{{ minutes }}</div>
           </div>
           <div class="seconds">
-            <div class="value">{{ seconds >= 1 ? 'seconds' : 'second'}}</div>
+            <div class="value">{{ seconds > 1 ? 'seconds' : 'second'}}</div>
             <div class="label">{{ seconds }}</div>
           </div>
         </div>
