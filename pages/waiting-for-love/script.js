@@ -15,7 +15,7 @@ const MISSES = [
   },
 ];
 /* global Vue */
-const app = new Vue({
+new Vue({
   el: '#app',
   data: {
     days: 0,
