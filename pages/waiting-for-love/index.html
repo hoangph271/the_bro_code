@@ -42,11 +42,15 @@
               :class="{'play-song': true, 'none': miss.src === undefined, 'paused': paused || srcId != miss.id }"
               @click="toggleMusic(miss)"
             ></div>
-            <div v-if="miss.her"class="her">
-              <div v-for="line in miss.her.split('\n')">{{ line }}</div>
+            <div v-if="miss.her" class="sweet-quote-wrapper">
+              <div class="her">
+                <div v-for="line in miss.her.split('\n')">{{ line }}</div>
+              </div>
             </div>
-            <div v-if="miss.me"class="me">
-              <div v-for="line in miss.me.split('\n')">{{ line }}</div>
+            <div v-if="miss.me" class="sweet-quote-wrapper">
+              <div class="me">
+                <div v-for="line in miss.me.split('\n')">{{ line }}</div>
+              </div>
             </div>
           </div>
         </div>

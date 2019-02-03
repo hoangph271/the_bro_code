@@ -82,12 +82,24 @@ div.count-down {
   border-bottom: none;
 }
 
-.miss-wrapper>.her, .me {
+.miss-wrapper:nth-child(odd)>.sweet-quote-wrapper {
+  width: calc(100% - 60px);
+}
+
+.sweet-quote-wrapper>.her, .sweet-quote-wrapper>.me {
+  text-align: left;
+  display: inline-block;
   cursor: pointer;
   min-height: 30px;
   padding: 4px;
   box-sizing: border-box;
   font-family: 'Pacifico', cursive;
+}
+
+.sweet-quote-wrapper {
+  text-align: center;
+  display: inline-block;
+  width: calc(100% - 60px);
 }
 
 .play-song {
