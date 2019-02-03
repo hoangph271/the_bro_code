@@ -46,13 +46,13 @@ div.count-down {
   display: inline-block;
   padding: 10px;
   min-width: 100px;
-  background: rgba(40,50,61,0.65);
+  background: rgba(40, 50, 61, 0.65);
   max-width: 40%;
   margin-bottom: 5px;
 }
 
 .clock>div:hover {
-  background: rgba(40,50,61,0.85);
+  background: rgba(40, 50, 61, 0.85);
 }
 
 .message {
@@ -65,28 +65,31 @@ div.count-down {
 .misses-container {
   border-radius: 5px;
   margin: 10px;
-  background: rgba(40,50,61,0.65);
+  background: rgba(40, 50, 61, 0.65);
   color: white;
 }
 
 .miss-wrapper {
   min-height: 60px;
-  border-bottom: 2px solid rgba(40,50,61,0.65);
+  border-bottom: 2px solid rgba(40, 50, 61, 0.65);
 }
+
 .miss-wrapper:hover {
-  background: rgba(40,50,61,0.5);
+  background: rgba(40, 50, 61, 0.5);
 }
 
 .miss-wrapper:last-child {
   border-bottom: none;
 }
 
-.miss-wrapper>.her,.me {
+.miss-wrapper>.her, .me {
   cursor: pointer;
   min-height: 30px;
   padding: 4px;
   box-sizing: border-box;
+  font-family: 'Pacifico', cursive;
 }
+
 .play-song {
   cursor: pointer;
   margin: 10px;
@@ -101,6 +104,7 @@ div.count-down {
 .play-song.paused {
   filter: grayscale(100%);
 }
+
 .play-song.none {
   background-image: url(none.png);
   cursor: grabbing;
@@ -109,6 +113,7 @@ div.count-down {
 .miss-wrapper:nth-child(even)>.play-song {
   float: left;
 }
+
 .miss-wrapper:nth-child(odd)>.play-song {
   float: right;
 }

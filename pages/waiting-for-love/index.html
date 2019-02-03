@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Can't wait...! :"}</title>
   <link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <link rel="shortcut icon" href="icon.png" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
@@ -41,8 +42,12 @@
               :class="{'play-song': true, 'none': miss.src === undefined, 'paused': paused || srcId != miss.id }"
               @click="toggleMusic(miss)"
             ></div>
-            <div v-if="miss.her" class="her">"{{ miss.her }}"</div>
-            <div v-if="miss.me" class="me">"{{ miss.me }}"</div>
+            <div v-if="miss.her"class="her">
+              <div v-for="line in miss.her.split('\n')">{{ line }}</div>
+            </div>
+            <div v-if="miss.me"class="me">
+              <div v-for="line in miss.me.split('\n')">{{ line }}</div>
+            </div>
           </div>
         </div>
       </div>

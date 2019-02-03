@@ -2,23 +2,27 @@ const D_DAY = new Date(2019, 1, 10, 16, 0, 0);
 const MISSES = [
   {
     id: 1,
-    her: 'I miss your smell',
-    me: 'I miss your breath...!',
+    her: '"I miss your smell"',
+    me: '"I miss your breath...!"',
     src: './A Thousand Years - Christina Perri (NhacPro.net).mp3',
     title: 'A thousand years - Christina Perri',
   },
   {
     id: 2,
-    me: `I miss the way you turn away and cover your head when you're shy...!`,
+    me: `"I miss the way you turn away and cover your head when you're shy...!"`,
     src: './peter & lara jean i like me better.mp3',
     title: 'I like me better - Peter & Lara Jean',
   },
   {
     id: 3,
-    me: `I can't wait to see it...! 🤒\nAnd you, can't wait to see you...! 😷`,
-    her: `Bí ẩn là thỏi nam châm hút phái mạnh của phụ nữ`,
+    me: `"I can't wait to see it...! 🤒\nAnd you, can't wait to see you...! 😷"`,
+    her: `"Bí ẩn là thỏi nam châm hút phái mạnh của phụ nữ"`,
     src: './Charlie Puth - Marvin Gaye (Audio) ft. Meghan Trai.mp3',
     title: 'Charlie Puth - Marvin Gaye & Meghan Trai',
+  },
+  {
+    id: 4,
+    me: `"- Màu hồng nhá...!\n- Đụng vào là n cụp hết lại nhá...!\n- Anh thích ngắm nhá...!\n- Anh nghịch mãi không chán nhá...!\nGiống ai ta...? 😚"`,
   },
 ];
 /* global Vue */
