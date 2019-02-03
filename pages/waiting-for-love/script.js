@@ -11,7 +11,14 @@ const MISSES = [
     id: 2,
     me: `I miss the way you turn away and cover your head when you're shy...!`,
     src: './peter & lara jean i like me better.mp3',
-    title: 'Peter & Lara Jean - I like me better',
+    title: 'I like me better - Peter & Lara Jean',
+  },
+  {
+    id: 3,
+    me: `I can't wait to see it...! 🤒\nAnd you, can't wait to see you...! 😷`,
+    her: `Bí ẩn là thỏi nam châm hút phái mạnh của phụ nữ`,
+    src: './Charlie Puth - Marvin Gaye (Audio) ft. Meghan Trai.mp3',
+    title: 'Charlie Puth - Marvin Gaye & Meghan Trai',
   },
 ];
 /* global Vue */
