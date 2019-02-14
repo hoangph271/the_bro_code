@@ -10,6 +10,7 @@
   <title>Lots of hearts</title>
   <style>
     body {
+      height: 100vh;
       margin: 0;
     }
   </style>
@@ -20,7 +21,7 @@
   <canvas id='myCanvas' width='0' height='0'></canvas>
   <script>
     document.querySelector('#myCanvas').width = document.body.clientWidth;
-    document.querySelector('#myCanvas').height = document.body.clientWidth;
+    document.querySelector('#myCanvas').height = document.body.clientHeight - 10;
     const endAngle = 226;
     let canvas = document.getElementById('myCanvas');
     let context = canvas.getContext('2d');
@@ -52,7 +53,7 @@
     function randomize() {
       counter = 60;
       context.fillStyle = 'rgba(255,' + Math.floor(Math.random() * 255) + ', 255 ,1)';
-      radius = Math.random() * 100 / (500 / screen.width);
+      radius = Math.random() * 100 / (500 / document.body.clientWidth);
       context.translate(-tx, -ty);
       tx = Math.random() * canvas.width;
       ty = Math.random() * canvas.height;
