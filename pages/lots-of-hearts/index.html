@@ -8,14 +8,19 @@
   <link rel="shortcut icon" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/facebook/158/heart-decoration_1f49f.png"
     type="image/x-icon">
   <title>Lots of hearts</title>
+  <style>
+    body {
+      margin: 0;
+    }
+  </style>
 </head>
 
 <body>
 
   <canvas id='myCanvas' width='0' height='0'></canvas>
   <script>
-    document.querySelector('#myCanvas').width = screen.width - 16;
-    document.querySelector('#myCanvas').height = screen.height - 16;
+    document.querySelector('#myCanvas').width = document.body.clientWidth;
+    document.querySelector('#myCanvas').height = document.body.clientWidth;
     const endAngle = 226;
     let canvas = document.getElementById('myCanvas');
     let context = canvas.getContext('2d');
