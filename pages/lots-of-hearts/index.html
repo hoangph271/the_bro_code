@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/facebook/158/heart-decoration_1f49f.png"
+    type="image/x-icon">
+  <title>Lots of hearts</title>
+</head>
+
+<body>
+
+  <canvas id='myCanvas' width='0' height='0'></canvas>
+  <script>
+    document.querySelector('#myCanvas').width = screen.width - 16;
+    document.querySelector('#myCanvas').height = screen.height - 16;
+    const endAngle = 226;
+    let canvas = document.getElementById('myCanvas');
+    let context = canvas.getContext('2d');
+    let counter = 60;
+    let radius, tx, ty;
+    context.translate(tx, ty);
+    randomize();
+    requestAnimationFrame(animate);
+
+    function animate() {
+      let x, y;
+      if (counter <= endAngle) {
+        let radians = Math.PI / 180 * counter;
+        y = radius * Math.sin(radians);
+        x = radius * Math.cos(radians);
+        context.fillRect(radius / 2 - x, -y, 2, 2);
+        context.fillRect(-radius / 2 + x, -y, 2, 2);
+      } else {
+        x = counter - endAngle - radius * 1.2;
+        y = counter - endAngle + radius * .71;
+        context.fillRect(x, y, 2, 2);
+        context.fillRect(-x, y, 2, 2);
+      }
+      counter = counter + 1;
+      if (counter >= endAngle + radius * 1.2) randomize();
+      requestAnimationFrame(animate);
+    }
+
+    function randomize() {
+      counter = 60;
+      context.fillStyle = 'rgba(255,' + Math.floor(Math.random() * 255) + ', 255 ,1)';
+      radius = Math.random() * 100 / (500 / screen.width);
+      context.translate(-tx, -ty);
+      tx = Math.random() * canvas.width;
+      ty = Math.random() * canvas.height;
+      context.translate(tx, ty);
+    }
+  </script>
+</body>
+
+</html>
