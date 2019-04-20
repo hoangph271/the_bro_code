@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+* {
+    font-family: Nunito;
+    cursor: default;
+}
+
+.hover-fade:hover{
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+body{
+    margin: 0px;
+}
+
+.section-part{
+    justify-content: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-ava-container{
+    padding: 20px 0px;
+    text-align: center;
+    background: #fff;
+    margin: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.top-ava{
+    height: 250px;
+    width: 250px;
+    margin: auto;
+    background-color: rgba(221,221,221,0.6);
+    border-radius: 50%;
+    background-size: 85%;
+    background-image: url(img/fish.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.mute-button{
+    margin-bottom: -20px;
+    float: right;
+    height: 35px;
+    width: 35px;
+    background-size: cover;
+    background-color: transparent;
+    background-image: url(img/mute.png);
+    background-repeat: no-repeat;
+}
+
+.top-banner{
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: xx-large;
+    text-align: center;
+    background-color: gray;
+    color: white;
+}
+
+.center-text{
+    margin: auto;
+}
+
+.header-below-container{
+    overflow: auto;
+    align-items: center;
+    flex-grow: 10;
+    margin: 10px;
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+#PartII{
+    flex-direction: row;
+}
+
+.part-2-navigate{
+    height: 100%;
+    float: left;
+    width: 85px;
+}
+
+.part-2-content{
+    flex-grow: 10;
+}
+
+.navigate-button{
+    box-sizing: border-box;
+    border: 1px solid #204d74;
+    border-collapse: collapse;
+    border-bottom: none;
+    background-color: #449d44;
+    height: 25%;    
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: large;
+}
+.navigate-button-selected{
+    background-color: #4CCF50;
+    border-right: none;
+}
+.navigate-button div{
+    margin: auto;
+}
+
+.part-2-content{
+    border-top: 1px solid #204d74;
+    background-color: #4CCF50;
+}
+
+#PartIII{
+    background-color: black;
+}
+
+#PartIV{
+    position: relative;
+    background-image: url(img/scroll_background_cut.png);
+    background-color: #d2b993;
+    background-size: cover;
+}
+
+.ending-text{
+    font-size: x-large;
+    max-width: 320px;
+    margin: auto;
+}
+
+.ending-text-container{
+    display: flex;
+    min-height: 350px;
+    background-image: url(img/scroll_background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.old-video{
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.old-video-intro-text{
+    cursor: pointer;    
+    color: white;
+    font-size: large;
+    margin: auto;
+}
+
+.footer-text{
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background: black;
+    color: white;
+    text-align: center;
+}
+
+.one-call-away-link{
+    width: 40px;
+    margin: auto;
+    height: 40px;
+    text-align: center;
+    display: block;
+}
+
+.one-call-away{
+    cursor: pointer;    
+    width: 40px;
+    height: 40px;
+}
+
+@media only screen and (max-height: 350px) {
+    .top-ava-container{
+        padding: 5px 0px;
+    }
+    
+    #DoryAva{
+        height: 120px;
+        width: 120px;
+    }
+    
+    .top-banner{
+        font-size: large;
+    }
+    
+    .header-below-container{
+        margin: 5px;    
+    }
+    
+    .ending-text-container{
+        height: 100%;
+        min-height: 0px;
+    }
+    
+    .footer-text{
+        bottom: 0px;
+        padding-bottom: 0px;
+    }
+}
