@@ -1,4 +1,4 @@
-const D_DAY = new Date(2019, 1, 10, 16, 0, 0);
+const D_DAY = new Date(2019, 4, 12, 16, 0, 0);
 const MISSES = [
   {
     id: 1,
@@ -54,6 +54,10 @@ new Vue({
       if (now.getTime() < D_DAY.getTime()) {
         setTimeout(this.updateTimer, 1000);
       } else {
+        this.days = '00';
+        this.hours = '00';
+        this.minutes = '00';
+        this.seconds = '00';
         // TODO: Set final content
       }
     },
