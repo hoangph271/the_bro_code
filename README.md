@@ -1,1 +1,1 @@
-# [The #BroCode](https://orvjund.github.io)
+# [The #BroCode](https://thebrocode.netlify.app/)
