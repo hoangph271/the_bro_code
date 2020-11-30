@@ -20,16 +20,18 @@
       <input type="text" autocomplete="off" autocapitalize="none" placeholder="keyword" name="keyword" v-model="keyword" id="keyword">
       <span>Found {{ this.codes.length }} code{{ this.codes.length > 1 ? 's': ''}}...!</span>
     </div>
-    <div v-for="code in codes" class="code-container">
+    <div v-for="code in codes" class="code-container" @click="handleCopyCode(code)">
       <div class="code-number">{{ code.number }}</div>
       <div class="code-content"> {{ code.content }}</div>
     </div>
-  </div>
-  <!-- Snackbar -->
-  <div id="snackbar">
-    <span class="wrapper">
-      <span class="text"></span>
-    </span>
+    <!-- Snackbar -->
+    <div v-if="toastText" id="snackbar" class="show">
+      <span class="wrapper">
+        <span class="text">
+          {{ toastText }}
+        </span>
+      </span>
+    </div>
   </div>
   <script src="index.js"></script>
 </body>

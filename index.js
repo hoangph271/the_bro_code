@@ -2,41 +2,36 @@ new Vue({
   el: '#app',
   data: {
     keyword: '',
+    toastText: '',
+    toastTimeout: null,
   },
   computed: {
-    codes: function() {
-      return codes.filter(code => code.content.includes(this.keyword));
+    codes() {
+      return codes.filter(code => code.content.toLowerCase().includes(this.keyword.toLowerCase()))
+    }
+  },
+  methods: {
+    async handleCopyCode(code) {
+      try {
+        const { state } = await navigator.permissions.query({ name: 'clipboard-write' })
+
+        if (['granted', 'prompt'].includes(state)) {
+          const { number, content } = code
+          const copyContent = `Article ${number}: ${content}`
+
+          await navigator.clipboard.writeText(copyContent)
+          this.showToast(copyContent)
+        }
+      } catch (error) {
+        console.error(error)
+        this.showToast('Copy failed...!')
+      }
+    },
+    showToast(text) {
+      this.toastText = ''
+      clearTimeout(this.toastTimeout)
+      this.$nextTick(() => this.toastText = text)
+      this.toastTimeout = setTimeout(() => this.toastText = '', 3000)
     }
   }
-});
-document.querySelectorAll('.code-container').forEach((codeContainer) => {
-  codeContainer.addEventListener('click', codeClickedHandler);
-});
-
-function codeClickedHandler(event) {
-  const codeContainer = this;
-  navigator.permissions.query({
-    name: "clipboard-write"
-  }).then(result => {
-    if (result.state == "granted" || result.state == "prompt") {
-      const number = codeContainer.querySelector('.code-number').innerText;
-      const content = codeContainer.querySelector('.code-content').innerText;
-      const copyContent = `Article ${number}: ${content}`;
-      navigator.clipboard.writeText(copyContent)
-        .then(() => {
-          toast(copyContent);
-        }, () => {
-          toast('Copy failed...!');
-        });
-    }
-  });
-}
-
-function toast(text) {
-  const snackbar = document.querySelector('#snackbar');
-  snackbar.querySelector('.text').innerHTML = text;
-  snackbar.classList.add('show');
-  setTimeout(() => {
-    snackbar.classList.remove('show');
-  }, 3000);
-}
+})
