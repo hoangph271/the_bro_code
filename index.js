@@ -13,15 +13,11 @@ new Vue({
   methods: {
     async handleCopyCode(code) {
       try {
-        const { state } = await navigator.permissions.query({ name: 'clipboard-write' })
+        const { number, content } = code
+        const copyContent = `Article ${number}: ${content}`
 
-        if (['granted', 'prompt'].includes(state)) {
-          const { number, content } = code
-          const copyContent = `Article ${number}: ${content}`
-
-          await navigator.clipboard.writeText(copyContent)
-          this.showToast(copyContent)
-        }
+        await navigator.clipboard.writeText(copyContent)
+        this.showToast(copyContent)
       } catch (error) {
         console.error(error)
         this.showToast('Copy failed...!')
